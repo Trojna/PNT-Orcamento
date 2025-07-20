@@ -3,15 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PINT Transforma - Pintura Premium</title>
+    <title>PNT Pinturas e Decoração - Transformando Ambientes</title>
+    <meta name="description" content="Pintura residencial e predial com qualidade premium. Transformamos seus ambientes com técnicas modernas e materiais de alta qualidade. Solicite seu orçamento gratuito!">
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         :root {
-            --primary: #FF6B35;
-            --secondary: #2E294E;
-            --accent: #1B998B;
-            --light: #F5F5F5;
-            --dark: #333;
+            --primary: #FF6B35;     /* Laranja vibrante para destaques */
+            --secondary: #1A3A6C;   /* Azul marinho - cor principal */
+            --accent: #FFD166;      /* Amarelo dourado para destaques */
+            --light: #F8F9FA;       /* Fundo claro */
+            --dark: #212529;        /* Texto escuro */
+            --white: #FFFFFF;       /* Branco */
         }
         
         * {
@@ -22,7 +27,7 @@
         }
         
         body {
-            background-color: #fff;
+            background-color: var(--light);
             color: var(--dark);
             overflow-x: hidden;
             line-height: 1.6;
@@ -30,8 +35,8 @@
         
         /* Header */
         header {
-            background: linear-gradient(135deg, var(--secondary) 0%, #1a1a2e 100%);
-            color: white;
+            background-color: var(--white);
+            color: var(--secondary);
             padding: 1rem 5%;
             position: fixed;
             width: 100%;
@@ -51,11 +56,13 @@
         .logo {
             display: flex;
             align-items: center;
+            font-weight: 700;
         }
         
         .logo h1 {
             font-size: 1.8rem;
             margin-left: 10px;
+            color: var(--secondary);
         }
         
         .logo span {
@@ -68,15 +75,16 @@
         }
         
         nav ul li {
-            margin-left: 2rem;
+            margin-left: 1.5rem;
         }
         
         nav ul li a {
-            color: white;
+            color: var(--secondary);
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
             transition: all 0.3s ease;
             position: relative;
+            font-size: 1rem;
         }
         
         nav ul li a:hover {
@@ -105,7 +113,7 @@
         
         .contact-header a {
             background: var(--primary);
-            color: white;
+            color: var(--white);
             padding: 0.7rem 1.5rem;
             border-radius: 30px;
             text-decoration: none;
@@ -113,6 +121,7 @@
             display: flex;
             align-items: center;
             transition: all 0.3s ease;
+            font-size: 0.9rem;
         }
         
         .contact-header a:hover {
@@ -127,71 +136,82 @@
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(46, 41, 78, 0.9), rgba(46, 41, 78, 0.8)), url('https://images.unsplash.com/photo-1593696140826-c58b021acf8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background: linear-gradient(rgba(26, 58, 108, 0.85), rgba(26, 58, 108, 0.9)), url('https://images.unsplash.com/photo-1593696140826-c58b021acf8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
             background-size: cover;
             background-position: center;
             height: 100vh;
             display: flex;
             align-items: center;
             padding: 0 5%;
-            color: white;
+            color: var(--white);
             position: relative;
             margin-top: 70px;
+            text-align: center;
         }
         
         .hero-content {
-            max-width: 650px;
+            max-width: 800px;
+            margin: 0 auto;
             z-index: 2;
         }
         
         .hero h2 {
-            font-size: 3.5rem;
+            font-size: 3.2rem;
             margin-bottom: 1.5rem;
             line-height: 1.2;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .hero h2 .highlight {
+            color: var(--accent);
+            font-weight: 700;
+            display: block;
+            margin-top: 10px;
         }
         
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             margin-bottom: 2rem;
             line-height: 1.6;
-        }
-        
-        .highlight {
-            color: var(--primary);
-            font-weight: 700;
+            max-width: 700px;
+            margin: 0 auto 2rem;
         }
         
         .hero-buttons {
             display: flex;
             gap: 20px;
+            justify-content: center;
+            margin-top: 2rem;
         }
         
         .btn {
-            padding: 1rem 2rem;
+            padding: 1rem 2.5rem;
             border-radius: 30px;
             text-decoration: none;
             font-weight: 600;
             display: inline-block;
             transition: all 0.3s ease;
             text-align: center;
+            font-size: 1.1rem;
         }
         
         .btn-primary {
             background: var(--primary);
-            color: white;
-            box-shadow: 0 5px 15px rgba(255,107,53,0.4);
+            color: var(--white);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         
         .btn-primary:hover {
             background: #e55a2a;
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(255,107,53,0.6);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
         }
         
         .btn-secondary {
             background: transparent;
-            color: white;
-            border: 2px solid white;
+            color: var(--white);
+            border: 2px solid var(--white);
         }
         
         .btn-secondary:hover {
@@ -199,31 +219,38 @@
             transform: translateY(-3px);
         }
         
-        /* WhatsApp Button */
-        .whatsapp-btn {
-            background: #25D366;
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            margin-top: 20px;
-            transition: all 0.3s ease;
+        .hero-quote {
+            margin-top: 3rem;
+            font-style: italic;
+            font-size: 1.4rem;
+            position: relative;
+            padding: 0 20px;
         }
         
-        .whatsapp-btn:hover {
-            background: #128C7E;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+        .hero-quote::before,
+        .hero-quote::after {
+            content: """;
+            font-size: 4rem;
+            position: absolute;
+            color: rgba(255, 255, 255, 0.2);
+            font-family: serif;
+        }
+        
+        .hero-quote::before {
+            top: -30px;
+            left: 0;
+        }
+        
+        .hero-quote::after {
+            bottom: -50px;
+            right: 0;
+            transform: rotate(180deg);
         }
         
         /* Services */
         .services {
             padding: 6rem 5%;
-            background: var(--light);
+            background: var(--white);
         }
         
         .section-title {
@@ -235,12 +262,36 @@
             font-size: 2.5rem;
             color: var(--secondary);
             margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
         }
         
         .section-title p {
             color: #666;
             max-width: 700px;
+            margin: 1.5rem auto 0;
+            font-size: 1.1rem;
+        }
+        
+        .services-container {
+            max-width: 1200px;
             margin: 0 auto;
+            background: var(--light);
+            border-radius: 15px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
         
         .services-grid {
@@ -251,40 +302,49 @@
         }
         
         .service-card {
-            background: white;
+            background: var(--white);
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             transition: all 0.3s ease;
+            border: 1px solid #eee;
+            text-align: center;
+            padding: 2rem 1.5rem;
         }
         
         .service-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-color: var(--primary);
         }
         
-        .service-img {
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .service-content {
-            padding: 1.5rem;
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 107, 53, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: var(--primary);
         }
         
         .service-content h3 {
             color: var(--secondary);
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
+            font-size: 1.4rem;
         }
         
         .service-content ul {
             list-style: none;
             margin-bottom: 1.5rem;
+            text-align: left;
         }
         
         .service-content ul li {
-            padding: 0.5rem 0;
+            padding: 0.6rem 0;
             border-bottom: 1px solid #eee;
             display: flex;
             align-items: center;
@@ -297,23 +357,35 @@
         .service-content ul li i {
             color: var(--primary);
             margin-right: 10px;
+            font-size: 0.9rem;
+        }
+        
+        .service-highlight {
+            background: var(--accent);
+            color: var(--dark);
+            padding: 5px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: 600;
+            font-size: 0.9rem;
         }
         
         /* Booking Section */
         .booking {
             padding: 6rem 5%;
-            background: linear-gradient(135deg, var(--secondary) 0%, #1a1a2e 100%);
-            color: white;
+            background: var(--secondary);
+            color: var(--white);
             position: relative;
         }
         
         .booking-container {
+            max-width: 1200px;
+            margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 50px;
             align-items: center;
-            max-width: 1400px;
-            margin: 0 auto;
         }
         
         .booking-content h2 {
@@ -324,6 +396,7 @@
         .booking-content p {
             margin-bottom: 1.5rem;
             line-height: 1.6;
+            font-size: 1.1rem;
         }
         
         .features {
@@ -332,12 +405,13 @@
         
         .feature {
             display: flex;
-            align-items: center;
-            margin-bottom: 1rem;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
         }
         
         .feature i {
-            background: var(--primary);
+            background: var(--accent);
+            color: var(--dark);
             width: 40px;
             height: 40px;
             border-radius: 50%;
@@ -346,10 +420,11 @@
             justify-content: center;
             margin-right: 15px;
             font-size: 1.2rem;
+            flex-shrink: 0;
         }
         
         .booking-form {
-            background: white;
+            background: var(--white);
             padding: 2.5rem;
             border-radius: 15px;
             box-shadow: 0 15px 30px rgba(0,0,0,0.2);
@@ -377,7 +452,7 @@
         .form-group select,
         .form-group textarea {
             width: 100%;
-            padding: 0.8rem 1rem;
+            padding: 0.9rem 1.2rem;
             border: 1px solid #ddd;
             border-radius: 8px;
             font-size: 1rem;
@@ -400,9 +475,9 @@
         
         .submit-btn {
             background: var(--primary);
-            color: white;
+            color: var(--white);
             border: none;
-            padding: 1rem;
+            padding: 1.1rem;
             width: 100%;
             border-radius: 8px;
             font-size: 1.1rem;
@@ -410,6 +485,8 @@
             cursor: pointer;
             transition: all 0.3s ease;
             margin-top: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
         .submit-btn:hover {
@@ -418,145 +495,61 @@
             box-shadow: 0 5px 15px rgba(255,107,53,0.4);
         }
         
-        /* Testimonials */
-        .testimonials {
-            padding: 6rem 5%;
-            background: white;
+        /* Contact Banner */
+        .contact-banner {
+            background: linear-gradient(to right, var(--secondary), var(--primary));
+            color: var(--white);
+            padding: 3rem 5%;
+            text-align: center;
         }
         
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 3rem;
+        .contact-banner-content {
+            max-width: 800px;
+            margin: 0 auto;
         }
         
-        .testimonial-card {
-            background: var(--light);
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            position: relative;
+        .contact-banner h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
         }
         
-        .testimonial-card::before {
-            content: '"';
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            font-size: 5rem;
-            color: rgba(27, 153, 139, 0.1);
-            font-family: serif;
-            line-height: 1;
-        }
-        
-        .testimonial-content {
-            margin-top: 1.5rem;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .client-info {
-            display: flex;
-            align-items: center;
-            margin-top: 1.5rem;
-        }
-        
-        .client-avatar {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: #ddd;
-            margin-right: 15px;
-            overflow: hidden;
-        }
-        
-        .client-details h4 {
-            color: var(--secondary);
-        }
-        
-        .client-details p {
-            color: #777;
-            font-size: 0.9rem;
-        }
-        
-        .rating {
-            color: #FFC107;
-            margin-top: 5px;
-        }
-        
-        /* Notification System */
-        .notification {
-            position: fixed;
-            top: 100px;
-            right: 20px;
-            background: white;
-            padding: 15px 20px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            z-index: 2000;
-            transform: translateX(120%);
-            transition: transform 0.5s ease;
-        }
-        
-        .notification.show {
-            transform: translateX(0);
-        }
-        
-        .notification i {
-            font-size: 1.5rem;
-            color: var(--primary);
-        }
-        
-        .notification-content h4 {
-            margin-bottom: 5px;
-        }
-        
-        .notification-content p {
-            font-size: 0.9rem;
-            color: #666;
-        }
-        
-        .notification-close {
-            background: none;
-            border: none;
+        .contact-banner p {
             font-size: 1.2rem;
-            cursor: pointer;
-            color: #999;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
         }
         
-        /* WhatsApp Float */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #25D366;
-            color: white;
-            width: 60px;
-            height: 60px;
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .contact-item i {
+            background: rgba(255, 255, 255, 0.2);
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.8rem;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-        
-        .whatsapp-float:hover {
-            background: #128C7E;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+            font-size: 1.3rem;
         }
         
         /* Footer */
         footer {
-            background: var(--secondary);
-            color: white;
+            background: var(--dark);
+            color: var(--white);
             padding: 4rem 5% 2rem;
         }
         
@@ -571,6 +564,7 @@
         .footer-logo h2 {
             font-size: 2rem;
             margin-bottom: 1rem;
+            color: var(--white);
         }
         
         .footer-logo span {
@@ -580,6 +574,7 @@
         .footer-logo p {
             margin-bottom: 1.5rem;
             line-height: 1.6;
+            color: #ccc;
         }
         
         .social-links {
@@ -595,7 +590,7 @@
             height: 40px;
             background: rgba(255,255,255,0.1);
             border-radius: 50%;
-            color: white;
+            color: var(--white);
             transition: all 0.3s ease;
         }
         
@@ -608,6 +603,7 @@
             font-size: 1.3rem;
             margin-bottom: 1.5rem;
             position: relative;
+            color: var(--white);
         }
         
         .footer-links h3::after {
@@ -639,18 +635,18 @@
             padding-left: 5px;
         }
         
-        .contact-info {
+        .contact-details {
             display: flex;
             flex-direction: column;
             gap: 15px;
         }
         
-        .contact-item {
+        .contact-detail {
             display: flex;
             align-items: flex-start;
         }
         
-        .contact-item i {
+        .contact-detail i {
             color: var(--primary);
             margin-right: 15px;
             font-size: 1.2rem;
@@ -668,6 +664,39 @@
             margin: 0 auto;
         }
         
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        
+        .whatsapp-float:hover {
+            background: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+            animation: none;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        
         /* Responsive */
         @media (max-width: 992px) {
             .booking-container {
@@ -675,7 +704,7 @@
             }
             
             .hero h2 {
-                font-size: 2.8rem;
+                font-size: 2.5rem;
             }
         }
         
@@ -685,15 +714,29 @@
             }
             
             .hero h2 {
-                font-size: 2.3rem;
+                font-size: 2rem;
+            }
+            
+            .hero-quote {
+                font-size: 1.2rem;
             }
             
             .hero-buttons {
                 flex-direction: column;
+                gap: 15px;
             }
             
             .form-row {
                 grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .services-container {
+                padding: 2rem;
             }
         }
     </style>
@@ -703,7 +746,7 @@
     <header>
         <div class="header-container">
             <div class="logo">
-                <i class="fas fa-paint-roller fa-2x" style="color: #FF6B35;"></i>
+                <i class="fas fa-paint-roller fa-2x" style="color: var(--primary);"></i>
                 <h1>PNT <span>Transforma</span></h1>
             </div>
             <nav>
@@ -723,11 +766,14 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <h2>Transformamos seus <span class="highlight">ambientes</span> com excelência em pintura</h2>
-            <p>Mais do que pintar, criamos experiências visuais que renovam espaços e encantam pessoas. Orçamento gratuito e atendimento personalizado.</p>
+            <h2>Excelência em <span class="highlight">Pintura e Decoração</span></h2>
+            <p>Atendemos com rapidez e qualidade. Preços acessíveis para você renovar seus espaços com beleza e proteção!</p>
             <div class="hero-buttons">
                 <a href="#agendamento" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Agende Agora</a>
                 <a href="https://wa.me/5519920002261" class="btn btn-secondary" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            </div>
+            <div class="hero-quote">
+                "Mais do que pintar, transformamos ambientes!"
             </div>
         </div>
     </section>
@@ -735,52 +781,54 @@
     <!-- Services Section -->
     <section class="services" id="servicos">
         <div class="section-title">
-            <h2>Nossos Serviços de Excelência</h2>
-            <p>Oferecemos soluções completas em pintura e decoração para transformar seus ambientes</p>
+            <h2>Nossos Serviços</h2>
+            <p>Contemplamos soluções completas em pintura e decoração para transformar seus ambientes</p>
         </div>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
-                <div class="service-content">
-                    <h3>Pintura Residencial</h3>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Pintura interna e externa</li>
-                        <li><i class="fas fa-check"></i> Decoração com efeito especial</li>
-                        <li><i class="fas fa-check"></i> Reparos e acabamentos</li>
-                        <li><i class="fas fa-check"></i> Textura e grafiato</li>
-                    </ul>
+        <div class="services-container">
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Pintura Residencial</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Pintura interna e externa</li>
+                            <li><i class="fas fa-check"></i> Decoração com efeito especial</li>
+                            <li><i class="fas fa-check"></i> Reparos e acabamentos</li>
+                            <li><i class="fas fa-check"></i> Textura e grafiato</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Pintura Predial</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Pintura de fachadas</li>
+                            <li><i class="fas fa-check"></i> Impermeabilização</li>
+                            <li><i class="fas fa-check"></i> Pintura de áreas comuns</li>
+                            <li><i class="fas fa-check"></i> Manutenção predial</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-roller"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Serviços Especializados</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Aplicação de massa corrida</li>
+                            <li><i class="fas fa-check"></i> Lixamento profissional</li>
+                            <li><i class="fas fa-check"></i> Reparos em paredes e tetos</li>
+                            <li><i class="fas fa-check"></i> Pintura decorativa</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <div class="service-card">
-                <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1581578029523-0c0a2a9a4a1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
-                <div class="service-content">
-                    <h3>Pintura Predial</h3>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Pintura de fachadas</li>
-                        <li><i class="fas fa-check"></i> Impermeabilização</li>
-                        <li><i class="fas fa-check"></i> Pintura de áreas comuns</li>
-                        <li><i class="fas fa-check"></i> Manutenção predial</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="service-card">
-                <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1591088398332-8a7791972843?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
-                <div class="service-content">
-                    <h3>Serviços Especializados</h3>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Aplicação de massa corrida</li>
-                        <li><i class="fas fa-check"></i> Lixamento profissional</li>
-                        <li><i class="fas fa-check"></i> Reparos em paredes e tetos</li>
-                        <li><i class="fas fa-check"></i> Decoração com efeitos especiais</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        
-        <div style="text-align: center; margin-top: 40px;">
-            <a href="https://wa.me/5519920002261?text=Olá! Gostaria de solicitar um orçamento para pintura." class="whatsapp-btn" target="_blank">
-                <i class="fab fa-whatsapp"></i> Solicitar Orçamento via WhatsApp
-            </a>
         </div>
     </section>
 
@@ -788,7 +836,7 @@
     <section class="booking" id="agendamento">
         <div class="booking-container">
             <div class="booking-content">
-                <h2>Agende seu orçamento gratuitamente</h2>
+                <h2>Solicite Seu Orçamento Gratuito</h2>
                 <p>Nossa equipe especializada está pronta para visitar seu espaço e criar uma proposta personalizada que atenda suas necessidades e expectativas.</p>
                 
                 <div class="features">
@@ -817,7 +865,7 @@
             </div>
             
             <div class="booking-form">
-                <h3>Solicite seu orçamento</h3>
+                <h3>Agendamento</h3>
                 <form id="agendamentoForm">
                     <div class="form-group">
                         <label for="name">Nome Completo</label>
@@ -858,78 +906,36 @@
                         <label for="message">Detalhes do Projeto</label>
                         <textarea id="message" rows="4" placeholder="Descreva o que precisa, cômodos, metragem, etc."></textarea>
                     </div>
-                    <button type="submit" class="submit-btn">SOLICITAR ORÇAMENTO GRATUITO</button>
+                    <button type="submit" class="submit-btn">Solicitar Orçamento</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="testimonials">
-        <div class="section-title">
-            <h2>O que nossos clientes dizem</h2>
-            <p>Depoimentos de quem já transformou seus espaços com nossa qualidade premium</p>
-        </div>
-        <div class="testimonial-grid">
-            <div class="testimonial-card">
-                <div class="testimonial-content">
-                    <p>"Contratei a PINT Transforma para pintar minha casa e fiquei impressionado com a atenção aos detalhes e profissionalismo. O resultado superou minhas expectativas!"</p>
-                    <div class="client-info">
-                        <div class="client-avatar"></div>
-                        <div class="client-details">
-                            <h4>Carlos Mendes</h4>
-                            <p>Residencial - Campinas/SP</p>
-                            <div class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
+    <!-- Contact Banner -->
+    <div class="contact-banner">
+        <div class="contact-banner-content">
+            <h2>Precisa de um orçamento rápido?</h2>
+            <p>Entre em contato agora mesmo com nossa equipe especializada</p>
+            <a href="tel:19920002261" class="btn btn-primary" style="margin-right: 15px;">
+                <i class="fas fa-phone"></i> Ligar Agora
+            </a>
+            <a href="https://wa.me/5519920002261" class="btn btn-secondary" target="_blank">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <div>(19) 92000-2261</div>
                 </div>
-            </div>
-            <div class="testimonial-card">
-                <div class="testimonial-content">
-                    <p>"A reforma do nosso prédio foi um sucesso graças à equipe da PINT Transforma. Pontualidade, limpeza e um acabamento impecável. Recomendo!"</p>
-                    <div class="client-info">
-                        <div class="client-avatar"></div>
-                        <div class="client-details">
-                            <h4>Mariana Oliveira</h4>
-                            <p>Condomínio - Valinhos/SP</p>
-                            <div class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-card">
-                <div class="testimonial-content">
-                    <p>"O serviço de textura que fizemos na loja trouxe um diferencial incrível para o ambiente. Clientes não param de elogiar. Profissionais de alto nível!"</p>
-                    <div class="client-info">
-                        <div class="client-avatar"></div>
-                        <div class="client-details">
-                            <h4>Roberto Santos</h4>
-                            <p>Comercial - Vinhedo/SP</p>
-                            <div class="rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <div>Segunda a Sábado | 8h às 18h</div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- Footer -->
     <footer id="contato">
@@ -968,20 +974,20 @@
             
             <div class="footer-contact">
                 <h3>Contato</h3>
-                <div class="contact-info">
-                    <div class="contact-item">
+                <div class="contact-details">
+                    <div class="contact-detail">
                         <i class="fas fa-map-marker-alt"></i>
                         <p>Atendemos em toda região de Campinas e interior de SP</p>
                     </div>
-                    <div class="contact-item">
+                    <div class="contact-detail">
                         <i class="fas fa-phone"></i>
                         <p>(19) 92000-2261</p>
                     </div>
-                    <div class="contact-item">
+                    <div class="contact-detail">
                         <i class="fas fa-envelope"></i>
-                        <p>pinturasedecoracoespnt@gmail.com</p>
+                        <p>contato@pinttransforma.com.br</p>
                     </div>
-                    <div class="contact-item">
+                    <div class="contact-detail">
                         <i class="fas fa-clock"></i>
                         <p>Segunda a Sábado: 8h às 18h</p>
                     </div>
@@ -990,7 +996,7 @@
         </div>
         
         <div class="copyright">
-            <p>&copy; 2023 PNT Transforma - Pinturas e Decoração. Todos os direitos reservados.</p>
+            <p>&copy; 2023 PNT Pinturas e Decoração - Transformando Ambientes. Todos os direitos reservados.</p>
         </div>
     </footer>
 
@@ -998,16 +1004,6 @@
     <a href="https://wa.me/5519920002261" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
-
-    <!-- Notification System -->
-    <div class="notification">
-        <i class="fas fa-bell"></i>
-        <div class="notification-content">
-            <h4>Novo Agendamento!</h4>
-            <p>Um cliente solicitou um orçamento.</p>
-        </div>
-        <button class="notification-close">&times;</button>
-    </div>
 
     <script>
         // WhatsApp Direct Function
@@ -1025,23 +1021,6 @@
             window.open(`https://wa.me/5519920002261?text=${whatsappMessage}`, '_blank');
         }
 
-        // Notification System
-        const notification = document.querySelector('.notification');
-        const closeBtn = document.querySelector('.notification-close');
-        
-        function showNotification() {
-            notification.classList.add('show');
-            
-            // Auto hide after 5 seconds
-            setTimeout(() => {
-                notification.classList.remove('show');
-            }, 5000);
-        }
-        
-        closeBtn.addEventListener('click', () => {
-            notification.classList.remove('show');
-        });
-
         // Form Submission
         document.getElementById('agendamentoForm').addEventListener('submit', function(e) {
             e.preventDefault();
@@ -1057,9 +1036,6 @@
                 alert('Por favor, preencha todos os campos obrigatórios.');
                 return;
             }
-            
-            // Show notification
-            showNotification();
             
             // Send to WhatsApp
             sendToWhatsApp();
