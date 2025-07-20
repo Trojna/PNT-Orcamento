@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PINT Transforma - Pintura Premium</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #FF6B35;
+            --secondary: #2E294E;
+            --accent: #1B998B;
+            --light: #F5F5F5;
+            --dark: #333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #fff;
+            color: var(--dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--secondary) 0%, #1a1a2e 100%);
+            color: white;
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            margin-left: 10px;
+        }
+        
+        .logo span {
+            color: var(--primary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 2rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        .contact-header {
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-header a {
+            background: var(--primary);
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-header a:hover {
+            background: #e55a2a;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255,107,53,0.3);
+        }
+        
+        .contact-header a i {
+            margin-right: 8px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(46, 41, 78, 0.9), rgba(46, 41, 78, 0.8)), url('https://images.unsplash.com/photo-1593696140826-c58b021acf8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 5%;
+            color: white;
+            position: relative;
+            margin-top: 70px;
+        }
+        
+        .hero-content {
+            max-width: 650px;
+            z-index: 2;
+        }
+        
+        .hero h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .highlight {
+            color: var(--primary);
+            font-weight: 700;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 5px 15px rgba(255,107,53,0.4);
+        }
+        
+        .btn-primary:hover {
+            background: #e55a2a;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255,107,53,0.6);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-3px);
+        }
+        
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+        }
+        
+        /* Services */
+        .services {
+            padding: 6rem 5%;
+            background: var(--light);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 2rem;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .service-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .service-content {
+            padding: 1.5rem;
+        }
+        
+        .service-content h3 {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .service-content ul {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-content ul li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+        
+        .service-content ul li:last-child {
+            border-bottom: none;
+        }
+        
+        .service-content ul li i {
+            color: var(--primary);
+            margin-right: 10px;
+        }
+        
+        /* Booking Section */
+        .booking {
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, var(--secondary) 0%, #1a1a2e 100%);
+            color: white;
+            position: relative;
+        }
+        
+        .booking-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .booking-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .booking-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .features {
+            margin: 2rem 0;
+        }
+        
+        .feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .feature i {
+            background: var(--primary);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .booking-form {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .booking-form h3 {
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-size: 1.8rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255,107,53,0.2);
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        
+        .submit-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 1rem;
+            width: 100%;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+        
+        .submit-btn:hover {
+            background: #e55a2a;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255,107,53,0.4);
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 6rem 5%;
+            background: white;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 3rem;
+        }
+        
+        .testimonial-card {
+            background: var(--light);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 5rem;
+            color: rgba(27, 153, 139, 0.1);
+            font-family: serif;
+            line-height: 1;
+        }
+        
+        .testimonial-content {
+            margin-top: 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .client-info {
+            display: flex;
+            align-items: center;
+            margin-top: 1.5rem;
+        }
+        
+        .client-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #ddd;
+            margin-right: 15px;
+            overflow: hidden;
+        }
+        
+        .client-details h4 {
+            color: var(--secondary);
+        }
+        
+        .client-details p {
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
+        .rating {
+            color: #FFC107;
+            margin-top: 5px;
+        }
+        
+        /* Notification System */
+        .notification {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            z-index: 2000;
+            transform: translateX(120%);
+            transition: transform 0.5s ease;
+        }
+        
+        .notification.show {
+            transform: translateX(0);
+        }
+        
+        .notification i {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .notification-content h4 {
+            margin-bottom: 5px;
+        }
+        
+        .notification-content p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .notification-close {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: #999;
+        }
+        
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-float:hover {
+            background: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            color: white;
+            padding: 4rem 5% 2rem;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .footer-logo h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-logo span {
+            color: var(--primary);
+        }
+        
+        .footer-logo p {
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .footer-links h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .footer-links h3::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--primary);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links ul li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links ul li a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .contact-item i {
+            color: var(--primary);
+            margin-right: 15px;
+            font-size: 1.2rem;
+            margin-top: 5px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .booking-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h2 {
+                font-size: 2.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            
+            .hero h2 {
+                font-size: 2.3rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <i class="fas fa-paint-roller fa-2x" style="color: #FF6B35;"></i>
+                <h1>PNT <span>Transforma</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#agendamento">Agendar</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="contact-header">
+                <a href="tel:19920002261"><i class="fas fa-phone"></i> (19) 92000-2261</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>Transformamos seus <span class="highlight">ambientes</span> com excelência em pintura</h2>
+            <p>Mais do que pintar, criamos experiências visuais que renovam espaços e encantam pessoas. Orçamento gratuito e atendimento personalizado.</p>
+            <div class="hero-buttons">
+                <a href="#agendamento" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Agende Agora</a>
+                <a href="https://wa.me/5519920002261" class="btn btn-secondary" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="servicos">
+        <div class="section-title">
+            <h2>Nossos Serviços de Excelência</h2>
+            <p>Oferecemos soluções completas em pintura e decoração para transformar seus ambientes</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+                <div class="service-content">
+                    <h3>Pintura Residencial</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Pintura interna e externa</li>
+                        <li><i class="fas fa-check"></i> Decoração com efeito especial</li>
+                        <li><i class="fas fa-check"></i> Reparos e acabamentos</li>
+                        <li><i class="fas fa-check"></i> Textura e grafiato</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1581578029523-0c0a2a9a4a1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+                <div class="service-content">
+                    <h3>Pintura Predial</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Pintura de fachadas</li>
+                        <li><i class="fas fa-check"></i> Impermeabilização</li>
+                        <li><i class="fas fa-check"></i> Pintura de áreas comuns</li>
+                        <li><i class="fas fa-check"></i> Manutenção predial</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1591088398332-8a7791972843?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');"></div>
+                <div class="service-content">
+                    <h3>Serviços Especializados</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Aplicação de massa corrida</li>
+                        <li><i class="fas fa-check"></i> Lixamento profissional</li>
+                        <li><i class="fas fa-check"></i> Reparos em paredes e tetos</li>
+                        <li><i class="fas fa-check"></i> Decoração com efeitos especiais</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="https://wa.me/5519920002261?text=Olá! Gostaria de solicitar um orçamento para pintura." class="whatsapp-btn" target="_blank">
+                <i class="fab fa-whatsapp"></i> Solicitar Orçamento via WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="booking" id="agendamento">
+        <div class="booking-container">
+            <div class="booking-content">
+                <h2>Agende seu orçamento gratuitamente</h2>
+                <p>Nossa equipe especializada está pronta para visitar seu espaço e criar uma proposta personalizada que atenda suas necessidades e expectativas.</p>
+                
+                <div class="features">
+                    <div class="feature">
+                        <i class="fas fa-check"></i>
+                        <div>
+                            <h4>Atendimento Premium</h4>
+                            <p>Profissionais qualificados e comprometidos com a excelência</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-check"></i>
+                        <div>
+                            <h4>Agendamento Flexível</h4>
+                            <p>Atendemos de segunda a sábado, das 8h às 18h</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-check"></i>
+                        <div>
+                            <h4>Garantia de Satisfação</h4>
+                            <p>Compromisso com resultados que superam expectativas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="booking-form">
+                <h3>Solicite seu orçamento</h3>
+                <form id="agendamentoForm">
+                    <div class="form-group">
+                        <label for="name">Nome Completo</label>
+                        <input type="text" id="name" placeholder="Seu nome" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Telefone</label>
+                            <input type="tel" id="phone" placeholder="(19) 99999-9999" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="seuemail@exemplo.com">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Endereço do Serviço</label>
+                        <input type="text" id="address" placeholder="Rua, número, bairro" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="service">Tipo de Serviço</label>
+                            <select id="service" required>
+                                <option value="">Selecione um serviço</option>
+                                <option>Pintura Residencial</option>
+                                <option>Pintura Predial</option>
+                                <option>Pintura de Fachada</option>
+                                <option>Aplicação de Textura</option>
+                                <option>Reparos e Acabamentos</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Data Preferencial</label>
+                            <input type="date" id="date" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Detalhes do Projeto</label>
+                        <textarea id="message" rows="4" placeholder="Descreva o que precisa, cômodos, metragem, etc."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">SOLICITAR ORÇAMENTO GRATUITO</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="section-title">
+            <h2>O que nossos clientes dizem</h2>
+            <p>Depoimentos de quem já transformou seus espaços com nossa qualidade premium</p>
+        </div>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>"Contratei a PINT Transforma para pintar minha casa e fiquei impressionado com a atenção aos detalhes e profissionalismo. O resultado superou minhas expectativas!"</p>
+                    <div class="client-info">
+                        <div class="client-avatar"></div>
+                        <div class="client-details">
+                            <h4>Carlos Mendes</h4>
+                            <p>Residencial - Campinas/SP</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>"A reforma do nosso prédio foi um sucesso graças à equipe da PINT Transforma. Pontualidade, limpeza e um acabamento impecável. Recomendo!"</p>
+                    <div class="client-info">
+                        <div class="client-avatar"></div>
+                        <div class="client-details">
+                            <h4>Mariana Oliveira</h4>
+                            <p>Condomínio - Valinhos/SP</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>"O serviço de textura que fizemos na loja trouxe um diferencial incrível para o ambiente. Clientes não param de elogiar. Profissionais de alto nível!"</p>
+                    <div class="client-info">
+                        <div class="client-avatar"></div>
+                        <div class="client-details">
+                            <h4>Roberto Santos</h4>
+                            <p>Comercial - Vinhedo/SP</p>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contato">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <h2>PNT <span>Transforma</span></h2>
+                <p>Mais do que pintar, transformamos ambientes com excelência, criatividade e compromisso com a satisfação total de nossos clientes.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/5519920002261" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#agendamento">Agendamento</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Nossos Serviços</h3>
+                <ul>
+                    <li><a href="#">Pintura Residencial</a></li>
+                    <li><a href="#">Pintura Predial</a></li>
+                    <li><a href="#">Textura e Grafiato</a></li>
+                    <li><a href="#">Reparos e Acabamentos</a></li>
+                    <li><a href="#">Impermeabilização</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h3>Contato</h3>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Atendemos em toda região de Campinas e interior de SP</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <p>(19) 92000-2261</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>pinturasedecoracoespnt@gmail.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <p>Segunda a Sábado: 8h às 18h</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2023 PNT Transforma - Pinturas e Decoração. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/5519920002261" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Notification System -->
+    <div class="notification">
+        <i class="fas fa-bell"></i>
+        <div class="notification-content">
+            <h4>Novo Agendamento!</h4>
+            <p>Um cliente solicitou um orçamento.</p>
+        </div>
+        <button class="notification-close">&times;</button>
+    </div>
+
+    <script>
+        // WhatsApp Direct Function
+        function sendToWhatsApp() {
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            const date = document.getElementById('date').value;
+            const message = document.getElementById('message').value;
+            
+            const formattedDate = new Date(date).toLocaleDateString('pt-BR');
+            
+            const whatsappMessage = `Olá! Gostaria de solicitar um orçamento para pintura.%0A%0A*Detalhes do Serviço*%0A- Nome: ${name}%0A- Telefone: ${phone}%0A- Serviço: ${service}%0A- Data Preferencial: ${formattedDate}%0A- Detalhes: ${message}`;
+            
+            window.open(`https://wa.me/5519920002261?text=${whatsappMessage}`, '_blank');
+        }
+
+        // Notification System
+        const notification = document.querySelector('.notification');
+        const closeBtn = document.querySelector('.notification-close');
+        
+        function showNotification() {
+            notification.classList.add('show');
+            
+            // Auto hide after 5 seconds
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 5000);
+        }
+        
+        closeBtn.addEventListener('click', () => {
+            notification.classList.remove('show');
+        });
+
+        // Form Submission
+        document.getElementById('agendamentoForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            const date = document.getElementById('date').value;
+            
+            // Simple validation
+            if(!name || !phone || !service || !date) {
+                alert('Por favor, preencha todos os campos obrigatórios.');
+                return;
+            }
+            
+            // Show notification
+            showNotification();
+            
+            // Send to WhatsApp
+            sendToWhatsApp();
+            
+            // Reset form
+            this.reset();
+            
+            // Show success message
+            alert('Solicitação enviada com sucesso! Entraremos em contato em até 2 horas para confirmar seu agendamento.');
+        });
+        
+        // Set min date to today
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('date').setAttribute('min', today);
+        
+        // Smooth scrolling for navigation
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
