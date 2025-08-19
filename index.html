@@ -1169,7 +1169,7 @@
     </a>
 
     <script>
-        // WhatsApp Direct Function
+        // WhatsApp Direct Function - SEMPRE para (19) 97107-8091
         function sendToWhatsApp() {
             const name = document.getElementById('name').value;
             const phone = document.getElementById('phone').value;
@@ -1190,6 +1190,7 @@
                 whatsappMessage += `%0A%0A*Fotos Anexadas*%0A- ${photos.length} foto(s) (serão enviadas na conversa)`;
             }
             
+            // SEMPRE enviar para (19) 97107-8091
             window.open(`https://wa.me/5519971078091?text=${whatsappMessage}`, '_blank');
             
             // After opening WhatsApp, show alert about photos
@@ -1275,7 +1276,7 @@
                 return;
             }
             
-            // Send to WhatsApp
+            // SEMPRE enviar para (19) 97107-8091 via WhatsApp
             sendToWhatsApp();
             
             // Reset form
@@ -1306,4 +1307,4 @@
         });
     </script>
 </body>
-    </html>
+</html>
